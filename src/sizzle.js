@@ -913,7 +913,7 @@ Sizzle.attr = function( elem, name ) {
 	return val !== undefined ?
 		val :
 		support.attributes || !documentIsHTML ?
-			elem.getAttribute( name ) :
+			elem.getAttribute && elem.getAttribute( name ) :
 			(val = elem.getAttributeNode(name)) && val.specified ?
 				val.value :
 				null;
